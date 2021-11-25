@@ -19,10 +19,10 @@ class CreateImageManipulationsTable extends Migration
             $table->string('path');
             $table->string('type');
             $table->string('data');
-            $table->string('output_path');
-            $table->timestamp('created_at');
-            $table->foreignId('user_id');
-            $table->foreignId('album_id');
+            $table->string('output_path')->nullable();
+            $table->timestamp('created_at')->nullable();
+            $table->foreignId('user_id')->nullable();
+            $table->foreignId('album_id')->nullable();
         });
     }
 

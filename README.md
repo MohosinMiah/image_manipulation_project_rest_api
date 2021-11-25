@@ -26,11 +26,15 @@
     $table->timestamp('created_at');
     $table->foreignId('user_id');
     $table->foreignId('album_id');
-    
+
 </code>
 </p>
 <hr>
 
-
+<h3>1)  Album Controller : <code> php artisan make:controller AlbumController --model=Album --requests --api </code> </h3>
+<p>
+Artisan to generate form request classes for the controller's storage and update methods
+</p>
+<hr>
 
 
