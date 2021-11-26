@@ -42,4 +42,11 @@ Artisan to generate form request classes for the controller's storage and update
 
 <hr>
 
+<h3>5)  ImageManipulation Controller : <code> php artisan make:controller V1\\ImageManipulationController --model=ImageManipulation --requests --api </code> </h3>
+
+<hr>
+
+<h3>6)  ImageManipulation Resource : <code> php artisan make:resource V1\\ImageManipulationResource </code> </h3>
+
+<hr>
 
