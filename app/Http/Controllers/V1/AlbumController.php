@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Respose;
 use Illuminate\Support\Facades\Hash;
 use App\Http\Controllers\Controller;
+use App\Http\Resources\V1\AlbumResource;
 
 class AlbumController extends Controller
 {
@@ -19,8 +20,10 @@ class AlbumController extends Controller
      */
     public function index()
     {
-        return Album::all();
-    }
+        // return AlbumResource::collection(Album::all());
+    
+    return AlbumResource::collection(Album::paginate());
+}
 
     /**
      * Store a newly created resource in storage.
@@ -39,7 +42,7 @@ class AlbumController extends Controller
 
             ]);
 
-        return $album;
+        return new AlbumResource($album);
     }
 
     /**
@@ -50,7 +53,7 @@ class AlbumController extends Controller
      */
     public function show(Album $album)
     {
-        return $album;
+        return new AlbumResource($album);
     }
 
     /**
@@ -69,7 +72,7 @@ class AlbumController extends Controller
                 'name' => $request->name, 
             ]);
 
-        return $album;
+        return new AlbumResource($album);
     }
 
     /**
