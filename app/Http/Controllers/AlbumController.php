@@ -18,7 +18,7 @@ class AlbumController extends Controller
      */
     public function index()
     {
-        //
+        return Album::all();
     }
 
     /**
@@ -49,7 +49,7 @@ class AlbumController extends Controller
      */
     public function show(Album $album)
     {
-        //
+        return $album;
     }
 
     /**
@@ -61,7 +61,14 @@ class AlbumController extends Controller
      */
     public function update(UpdateAlbumRequest $request, Album $album)
     {
-        //
+        $user_id = $request->user_id;
+
+         $album->update(
+            [
+                'name' => $request->name, 
+            ]);
+
+        return $album;
     }
 
     /**
@@ -72,6 +79,10 @@ class AlbumController extends Controller
      */
     public function destroy(Album $album)
     {
-        //
+        if($album->delete()) {
+            return "Album Delete Successfull";
+        }else{
+            return "Something Went Wrong";
+        }
     }
 }

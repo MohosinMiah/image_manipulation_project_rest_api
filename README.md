@@ -31,10 +31,15 @@
 </p>
 <hr>
 
-<h3>1)  Album Controller : <code> php artisan make:controller AlbumController --model=Album --requests --api </code> </h3>
+<h3>3)  Album Controller : <code> php artisan make:controller AlbumController --model=Album --requests --api </code> </h3>
 <p>
 Artisan to generate form request classes for the controller's storage and update methods
 </p>
+<hr>
+
+
+<h3>4)  Album Resource : <code> php artisan make:resource V1\\AlbumResource </code> </h3>
+
 <hr>
 
 
