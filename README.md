@@ -50,3 +50,18 @@ Artisan to generate form request classes for the controller's storage and update
 
 <hr>
 
+<h3>7)  Image Resize Package <b>Intervention Image </b> :  <code> composer require intervention/image </code> </h3>
+<p>
+URL <a href="http://image.intervention.io/">Intervention Image </a>
+</p>
+
+<h3> Issue Solved Faced : Intervention Image :: GD Library extension not available with this PHP installation </h3> 
+<h4> Solution : find the line ;extension=gd in your php.ini file and change it to extension=gd.
+Credit <a href="https://stackoverflow.com/questions/34009844/gd-library-extension-not-available-with-this-php-installation-ubuntu-nginx">GD Library extension not available</a>
+</h4>
+
+
+<hr>
+
+
+

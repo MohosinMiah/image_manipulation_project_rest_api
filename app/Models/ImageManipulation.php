@@ -8,4 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class ImageManipulation extends Model
 {
     use HasFactory;
+
+
+    // const UPDATED_AT = false;
+
+    protected $fillable = ['name','path','type','data','output_path','user_id','album_id'];
+
+
 }

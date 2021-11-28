@@ -13,7 +13,7 @@ class StoreImageManipulationRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -23,8 +23,30 @@ class StoreImageManipulationRequest extends FormRequest
      */
     public function rules()
     {
-        return [
-            //
-        ];
+       $rules = [
+             'image' => ['required'], 
+             'w'     => ['required','regex:/^\d+(\.\d+)?%?$/'], 
+             'h'     => 'regex:/^\d+(\.\d+)?%?$/', 
+             'album_id' => 'exists:\App\Models\Album,id', 
+             
+       ];
+
+       $image =  $this->all()['image'] ?? false;
+
+    //    if($image && $request->hasFile($image)) {
+        if($image && $image instanceof UploadedFile) {
+             
+        $rules['image'][] = 'image';
+    }else{
+        $rules['image'][] = 'url';
+
     }
+
+
+
+    return $rules;
+
+
+}
+
 }
