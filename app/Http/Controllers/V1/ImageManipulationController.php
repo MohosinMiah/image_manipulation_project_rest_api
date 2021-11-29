@@ -7,9 +7,12 @@ use App\Models\ImageManipulation;
 use App\Models\Album;
 use App\Http\Requests\StoreImageManipulationRequest;
 use App\Http\Requests\UpdateImageManipulationRequest;
+use Intervention\Image\ImageManagerStatic as Image;
+use App\Http\Resources\V1\ImageManipulationResource;
 use File;
 use Str;
-use Intervention\Image\ImageManagerStatic as Image;
+
+
 
 
 
@@ -128,8 +131,10 @@ class ImageManipulationController extends Controller
             //         'user_id' => null, 
             //     ]);
 
-            return ImageManipulation::create($data);
+            $imageManipulation =  ImageManipulation::create($data);
             // http://127.0.0.1:8000/api/v1/image/resize?w=50%   API SAMPLE  URL REQUEST
+
+            return  new ImageManipulationResource($imageManipulation);
 
 
     }
@@ -166,6 +171,8 @@ class ImageManipulationController extends Controller
         }
        
      return [ $newWidth , $newHeight , $image];
+
+     
 
     }
 
