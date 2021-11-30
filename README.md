@@ -55,7 +55,7 @@ Artisan to generate form request classes for the controller's storage and update
 URL <a href="http://image.intervention.io/">Intervention Image </a>
 </p>
 
-<h3> Issue Solved Faced : Intervention Image :: GD Library extension not available with this PHP installation </h3> 
+<h3>8)  Issue Solved Faced : Intervention Image :: GD Library extension not available with this PHP installation </h3> 
 <h4> Solution : find the line ;extension=gd in your php.ini file and change it to extension=gd.
 Credit <a href="https://stackoverflow.com/questions/34009844/gd-library-extension-not-available-with-this-php-installation-ubuntu-nginx">GD Library extension not available</a>
 </h4>
@@ -63,7 +63,7 @@ Credit <a href="https://stackoverflow.com/questions/34009844/gd-library-extensio
 
 <hr>
 
-<h3> Authentication : 
+<h3>9) Authentication : 
 <code> composer require laravel/breeze --dev </code> 
 <code> php artisan breeze:install </code>
 <code> npm install </code>
@@ -71,6 +71,16 @@ Credit <a href="https://stackoverflow.com/questions/34009844/gd-library-extensio
 <code> php artisan migrate </code>
 </h3> 
 <p>Source : <a href="https://laravel.com/docs/8.x/starter-kits">laravel/breeze</a>
+<hr>
+
+
+<h3>10)  API Authentication used = sanctum: <code> composer require laravel/sanctum </code>
+
+<hr>
+
+
+<h3>11) DashBoardController : <code> php artisan make:controller DashBoardController </code> </h3> 
+
 <hr>
 
 
