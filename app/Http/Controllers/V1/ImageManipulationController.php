@@ -25,7 +25,7 @@ class ImageManipulationController extends Controller
      */
     public function index()
     {
-        //
+        return ImageManipulationResource::collection(ImageManipulation::paginate());
     }
 
     /**
@@ -185,9 +185,10 @@ class ImageManipulationController extends Controller
      * @param  \App\Models\ImageManipulation  $imageManipulation
      * @return \Illuminate\Http\Response
      */
-    public function show(ImageManipulation $imageManipulation)
+    public function show(ImageManipulation $image)
     {
-        
+        return new ImageManipulationResource(ImageManipulation::find($image->id));
+
     }
 
     /**
@@ -199,14 +200,15 @@ class ImageManipulationController extends Controller
      */
     public function byAlbum(Album $album)
     {
-        //
+        $where = [
+           'album_id' => $album->id,
+        ];
+
+        return ImageManipulationResource::collection(ImageManipulation::where($where)->paginate());
     }
 
 
-    public function resize(){
-
-
-    }
+   
 
     /**
      * Remove the specified resource from storage.
@@ -214,8 +216,13 @@ class ImageManipulationController extends Controller
      * @param  \App\Models\ImageManipulation  $imageManipulation
      * @return \Illuminate\Http\Response
      */
-    public function destroy(ImageManipulation $imageManipulation)
+    public function destroy(ImageManipulation $image)
     {
-        //
+        if($image->delete()) {
+            return "  Delete Successfull";
+        }else{
+            return "Something Went Wrong";
+        }
+
     }
 }

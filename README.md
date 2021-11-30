@@ -63,5 +63,18 @@ Credit <a href="https://stackoverflow.com/questions/34009844/gd-library-extensio
 
 <hr>
 
+<h3> Authentication : 
+<code> composer require laravel/breeze --dev </code> 
+<code> php artisan breeze:install </code>
+<code> npm install </code>
+<code>npm run dev </code>
+<code> php artisan migrate </code>
+</h3> 
+<p>Source : <a href="https://laravel.com/docs/8.x/starter-kits">laravel/breeze</a>
+<hr>
+
+
+
+
 
 
